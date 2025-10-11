@@ -1,3 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&family=Inter:wght@100;200;300;400;500&family=Open+Sans:wght@300;400;500&family=Roboto:wght@100;300;400&family=Lato:wght@100;300;400&display=swap');
+
+
 body {
-    background-color: aqua;
+    height: 100vh;
+    background: linear-gradient(to right, #000000, #002152);
+    font-family: 'Poppins', 'Inter', 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    background-color: #000000;
+    height: 70vh;
+    width: 50vh;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s ease;
+    
+}
+
+.form:hover {
+    transform: scale(1.03);
+}
+
+.very-form {
+    display: flex;
+    background-image: url("../media/mountains.png");
+    object-fit: fill;
+    width: 100vh;
+    justify-content: end;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease;
+}
+
+.very-form:hover {
+    transform: scale(1.03);
+}
+
+.block_orientation {
+    gap: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs_form {
+    height: 4vh;
+    width: 32vh;
+    background-color: #0f0f0f;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 2.2vh;
+}
+
+.labels {
+    color: white;
+    font-size: 2.1vh;
+}
+
+.create_title {
+    font-size: 3.8vh;
+    color: white;
+}
+
+.form-button {
+    height: 4vh;
+    width: 16vh;
+    background: linear-gradient(90deg, #002152, #00173a);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.form-button:hover {
+    transform: scale(1.05);
+}
+
+.buttons-form {
+    margin-top: 40px;
+    display: flex;
+    gap: 5px;
+
+}
+
+.space {
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

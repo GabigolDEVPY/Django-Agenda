@@ -8,3 +8,8 @@ class ContactAdmin(admin.ModelAdmin):
     ordering = '-id',
     search_fields = "id", "first_name", "last_name",
     list_per_page = 1
+    
+@admin.register(models.Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = "name",
+    ordering = '-id',

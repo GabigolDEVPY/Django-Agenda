@@ -117,6 +117,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [ BASE_DIR / 'base_static']
+MEDIA_URL = "media/"
+STATIC_ROOT = BASE_DIR /'static'
+MEDIA_ROOT = BASE_DIR / 'madia'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
