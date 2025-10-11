@@ -70,15 +70,17 @@ TEMPLATES = [
 WSGI_APPLICATION = 'project.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'agenda',        # nome do seu banco
+        'USER': 'root',   # usuário do MySQL
+        'PASSWORD': 'Gabrielrochadias12', # senha do MySQL
+        'HOST': 'localhost',     # ou IP do servidor MySQL
+        'PORT': '3306',          # porta padrão do MySQL
     }
 }
+
 
 
 # Password validation
