@@ -4,3 +4,4 @@ venv/
 .venv
 static/
 db.sqlite3/
+project/local_settings.py
