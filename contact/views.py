@@ -26,7 +26,7 @@ def users_view(request: HttpRequest) -> HttpResponse:
     print("Chegou aqui")
     return render(
         request,
-        'contact/show.html',
+        'contact/index.html',
     )
     return Users().return_all_users(request)
 
