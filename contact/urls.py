@@ -6,4 +6,5 @@ app_name = 'contact'
 
 urlpatterns = [
     path('', views.index, name="index"),
+    path('users-json', views.users_view, name='users')
 ]
