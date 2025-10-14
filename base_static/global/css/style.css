@@ -96,3 +96,47 @@ body {
     flex-direction: column;
     gap: 10px;
 }
+
+
+.users-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.users-table {
+    width: 80%;
+    border-collapse: collapse;
+    background: #1e1e2f;
+    color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.users-table th, .users-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.users-table th {
+    background-color: #27293d;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.users-table tr:hover {
+    background-color: #333554;
+}
+
+.user-link {
+    color: #56ccf2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.user-link:hover {
+    text-decoration: underline;
+}

@@ -1,11 +1,26 @@
 {% extends "global/base.html" %}
+{% load static %}
 {% block content %}
-    <div>
-        
-        {% for user in users %}
-            <div>
-                <p>{{ user.first_name }}</p>
-            </div>
-        {% endfor %}
-    </div>
-{% endblock content  %}
+<div class="users-container">
+    <table class="users-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td><a href="#" class="user-link">{{ user.id }}</a></td>
+                <td>{{ user.first_name }}</td>
+                <td>{{ user.last_name }}</td>
+                <td>{{ user.phone }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}
