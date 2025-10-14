@@ -1,6 +1,11 @@
 {% extends "global/base.html" %}
 {% block content %}
     <div>
-        <p>Texto</p>
+        
+        {% for user in users %}
+            <div>
+                <p>{{ user.first_name }}</p>
+            </div>
+        {% endfor %}
     </div>
 {% endblock content  %}

@@ -8,7 +8,7 @@
             <label style="font-size: 3.5vh; font-weight: 300;" class="labels">Task Manager</label>
         </div>
 
-        <form id="userForm" class="form">
+        <form for="" id="userForm" class="form", action="{% url 'contact:users' %}" method="get">
             <div class="space">
                 <label style="margin-bottom: 20px;" class="create_title">Create Account</label>
 
@@ -29,7 +29,7 @@
 
                 <div class="buttons-form">
                     <button id="loginBtn" type="submit" class="form-button">Login</button>
-                    <button type="button" class="form-button">Register</button>
+                    <button type="submit" class="form-button">Register</button>
                 </div>
             </div>
         </form>

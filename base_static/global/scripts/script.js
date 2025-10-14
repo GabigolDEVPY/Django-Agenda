@@ -8,10 +8,10 @@
 //   }
 // };
 
-document.getElementById('userForm').onsubmit = async e => {
-  e.preventDefault();
-  const r = await fetch('/users-json');
-  const html = await r.text(); // pega o HTML da resposta
-  document.body.innerHTML = html; // substitui o corpo da página
-};
+// document.getElementById('userForm').onsubmit = async e => {
+//   e.preventDefault();
+//   const r = await fetch('/users-json');
+//   const html = await r.text(); // pega o HTML da resposta
+//   document.body.innerHTML = html; // substitui o corpo da página
+// };
 
