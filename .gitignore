@@ -2,6 +2,7 @@ venv/
 .venv/ 
 .vscode
 .venv
+.env
 static/
 db.sqlite3/
 project/local_settings.py

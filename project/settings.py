@@ -10,7 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+from json import load
 from pathlib import Path
+from dotenv import load_dotenv
+import os 
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -73,15 +77,13 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'agenda',        # nome do seu banco
-        'USER': 'root',   # usuário do MySQL
-        'PASSWORD': 'Gabrielrochadias12', # senha do MySQL
-        'HOST': 'localhost',     # ou IP do servidor MySQL
-        'PORT': '3306',          # porta padrão do MySQL
+        'NAME': os.getenv("NAME_DATABSE"),      
+        'USER': os.getenv("USER_ROOT"), 
+        'PASSWORD': os.getenv("PASSWORD_ROOT"),
+        'HOST': os.getenv("HOST_ROOT"),   
+        'PORT': os.getenv("PORT_ROOT")     
     }
 }
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
