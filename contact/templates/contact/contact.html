@@ -1,9 +1,15 @@
 {% extends "global/base.html" %}
 {% block content %}
-    <div>
-        <h1>{{ contact.first_name }} {{ contact.last_name }}</h1>
-        <p>{{ contact.phone }}</p>
-        <p>{{ contact.description }}</p>
-        <p>{{ contact.email }}</p>
+<div class="user-details-container">
+    <div class="user-details-card">
+        <h1 class="user-name">{{ contact.first_name }} {{ contact.last_name }}</h1>
+        <div class="user-info">
+            <p><span>📞 Telefone:</span> {{ contact.phone }}</p>
+            <p><span>📧 E-mail:</span> {{ contact.email }}</p>
+            <p><span>📝 Descrição:</span></p>
+            <p class="user-description">{{ contact.description }}</p>
+        </div>
+        {% comment %} <a href="{% url 'contact:home' %}" class="back-button">Voltar</a> {% endcomment %}
     </div>
+</div>
 {% endblock content %}
