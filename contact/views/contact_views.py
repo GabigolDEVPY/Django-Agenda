@@ -2,6 +2,8 @@ from os import name
 from django.http import HttpRequest, HttpResponse
 from typing import Any
 from django.shortcuts import render
+
+from contact.admin import ContactAdmin
 from ..models import Contact
 
 # Create your views here.
@@ -9,11 +11,16 @@ def index(request):
     return render(request,'contact/index.html')
     
 class Users:
-    def __init__(self):
+    def __init__(self, param=None):
         self.all_users: list[dict[str, Any]] = list(Contact.objects.all().order_by('-id'))
+        if param:
+            self.user: dict[str, Any] = Contact.objects.get(pk=param)
 
     def users_view(self, request: HttpRequest) -> HttpResponse:
         return render(request, "contact/home.html", context={"users": self.all_users})
+    
+    def user_view(self, request: HttpRequest) -> HttpResponse:
+        return render(request, "contact/contact.html", context={"contact": self.user})
     
 
 
