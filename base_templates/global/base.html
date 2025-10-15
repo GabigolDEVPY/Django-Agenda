@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'global/css/style.css' %}">
     <link rel="scrips" href="{% static 'global/scripts/script.js' %}">
-    <title>Document</title>
+    <title>Agenda</title>
 </head>
 <body>
+    {% include "global/partials/_header.html" %}
     {% block content %}{% endblock content %}
 </body>

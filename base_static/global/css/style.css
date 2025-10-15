@@ -2,6 +2,7 @@
 
 
 body {
+    padding-top: 9vh;
     height: 100vh;
     background: linear-gradient(to right, #000000, #002152);
     font-family: 'Poppins', 'Inter', 'Roboto', sans-serif;
@@ -209,4 +210,127 @@ body {
 .back-button:hover {
     background: linear-gradient(90deg, #00173a, #002152);
     transform: scale(1.05);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(15, 15, 26, 0.95);
+    backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column; /* <-- ADICIONA ISSO */
+    align-items: center;
+    gap: 1.5vh; /* <-- opcional, pra dar espaço entre botões e a barra */
+    padding: 2vh 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+
+.header-heading {
+    font-size: 3vh;
+}
+
+.header-link {
+    color: #56ccf2;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.header-link:hover {
+    color: #82dffb;
+    text-shadow: 0 0 5px #56ccf2;
+}
+
+/* ===== MENU ===== */
+
+.menu-list {
+    display: flex;
+    list-style: none;
+    gap: 3vh;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+}
+
+.menu-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 2.1vh;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.menu-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: #56ccf2;
+    transition: width 0.3s ease;
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
+
+.menu-link:hover {
+    color: #56ccf2;
+}
+
+/* ===== SEARCH BAR ===== */
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    height: 4vh;
+    width: 28vh;
+    border: none;
+    border-radius: 8px;
+    background-color: #1b1b2f;
+    color: #ffffff;
+    padding: 0 10px;
+    font-size: 2vh;
+    transition: 0.3s ease;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #a0a0a0;
+}
+
+.search-input:focus {
+    background-color: #22223b;
+    box-shadow: 0 0 5px #56ccf2;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 1vh 2vh;
+        gap: 1.5vh;
+    }
+
+    .menu-list {
+        gap: 2vh;
+    }
+
+    .search-input {
+        width: 80%;
+    }
 }
