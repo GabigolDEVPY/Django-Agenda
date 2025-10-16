@@ -17,7 +17,11 @@ class Users:
         if param:
             self.user: Contact = get_object_or_404(Contact, pk=param)
         elif search:
-            self.result_search: contact = Contact.objects.filter(Q(first_name__icontains=search) | Q(last_name__icontains=search))    
+            self.result_search: contact = \
+            Contact.objects.filter(Q(first_name__icontains=search) | 
+            Q(last_name__icontains=search) | 
+            Q(email__icontains=search) |     
+            Q(description__icontains=search))    
 
     def users_view(self, request: HttpRequest) -> HttpResponse:
         return render(request, "contact/home.html", context={"users": self.all_users})
