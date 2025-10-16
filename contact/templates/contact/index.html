@@ -1,42 +1,51 @@
-{% extends "global/base.html" %}
+
 {% load static %}
-{% block content %}
-<div>
-    <div class="very-form">
-        <div style="display: flex; align-items: center; width: 50%; flex-direction: column; margin-top: 70px;">
-            <label style="font-size: 4vh; font-weight: bold;" class="labels">Welcome</label>
-            <label style="font-size: 3.5vh; font-weight: 300;" class="labels">Task Manager</label>
-        </div>
-
-        <form for="" id="userForm" class="form", action="{% url 'contact:users' %}" method="get">
-            <div class="space">
-                <label style="margin-bottom: 20px;" class="create_title">Create Account</label>
-
-                <div style="align-items: center; display: flex; flex-direction: column; gap: 5px;">
-                    <div class="block_orientation">    
-                        <label class="labels" for="login-id">Login</label>
-                        <input id="login-id" name="username" class="inputs_form" type="text">                            
-                    </div>    
-                    <div class="block_orientation">    
-                        <label class="labels" for="password-id">Senha</label>
-                        <input type="password" id="password-id" name="password" class="inputs_form">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "global/css/style.css" %}">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div class="very-form">
+            <div style="display: flex; align-items: center; width: 50%; flex-direction: column; margin-top: 70px;">
+                <label style="font-size: 4vh; font-weight: bold;" class="labels">Welcome</label>
+                <label style="font-size: 3.5vh; font-weight: 300;" class="labels">Task Manager</label>
+            </div>
+    
+            <form for="" id="userForm" class="form", action="{% url 'contact:users' %}" method="get">
+                <div class="space">
+                    <label style="margin-bottom: 20px;" class="create_title">Create Account</label>
+    
+                    <div style="align-items: center; display: flex; flex-direction: column; gap: 5px;">
+                        <div class="block_orientation">    
+                            <label class="labels" for="login-id">Login</label>
+                            <input id="login-id" name="username" class="inputs_form" type="text">                            
+                        </div>    
+                        <div class="block_orientation">    
+                            <label class="labels" for="password-id">Senha</label>
+                            <input type="password" id="password-id" name="password" class="inputs_form">
+                        </div>
+                    </div>
+    
+                    <label style="color: white; font-weight: lighter; font-size: 1.3vh; text-decoration: underline; cursor: pointer;">
+                        Esqueci minha senha
+                    </label>
+    
+                    <div class="buttons-form">
+                        <button id="loginBtn" type="submit" class="form-button">Login</button>
+                        <button type="submit" class="form-button">Register</button>
                     </div>
                 </div>
-
-                <label style="color: white; font-weight: lighter; font-size: 1.3vh; text-decoration: underline; cursor: pointer;">
-                    Esqueci minha senha
-                </label>
-
-                <div class="buttons-form">
-                    <button id="loginBtn" type="submit" class="form-button">Login</button>
-                    <button type="submit" class="form-button">Register</button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
+        <script 
+            src="{% static 'global/scripts/script.js' %}">
+        </script>
     </div>
-    <script 
-        src="{% static 'global/scripts/script.js' %}">
-    </script>
-</div>
+</body>
+</html>
 
-{% endblock content %}
