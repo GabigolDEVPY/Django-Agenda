@@ -1,9 +1,7 @@
 from django.db.models import QuerySet, Q
 from django.http import HttpRequest, HttpResponse
-
-from typing import Any
+from django.core.paginator import Paginator
 from django.shortcuts import redirect, render, get_object_or_404
-
 import contact
 from ..models import Contact
 
@@ -24,14 +22,28 @@ class Users:
             Q(description__icontains=search))    
 
     def users_view(self, request: HttpRequest) -> HttpResponse:
-        return render(request, "contact/home.html", context={"users": self.all_users})
+        contacts = self.all_users
+        paginator = Paginator(contacts, 10)
+        page_number = request.GET.get("page")
+        page_object = paginator.get_page(page_number)
+        context = {
+            "page_object": page_object,
+        }
+        return render(request, "contact/home.html", context=context)
     
     def user_view(self, request: HttpRequest) -> HttpResponse:
         return render(request, "contact/contact.html", context={"contact": self.user})
     
     def user_search(self, request: HttpRequest) -> HttpResponse:
-        return render(request, "contact/home.html", context={"users": self.result_search})
-    
+        contacts = self.result_search
+        paginator = Paginator(contacts, 10)
+        page_number = request.GET.get("page")
+        page_object = paginator.get_page(page_number)
+        context = {
+            "page_object": page_object,
+        }
+        return render(request, "contact/home.html", context=context)
+
 
 def users_json(request: HttpRequest) -> HttpResponse:
     return Users().users_view(request)
@@ -43,4 +55,5 @@ def search(request: HttpRequest) -> HttpResponse:
     value_search = request.GET.get("q").strip()
     if value_search == '':
         return redirect('contact:users')
+    print(value_search)
     return Users(search=value_search).user_search(request)

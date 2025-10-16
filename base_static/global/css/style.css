@@ -2,13 +2,10 @@
 
 
 body {
-    padding-top: 9vh;
-    height: 100vh;
+    padding-top: 12vh; /* um pouco mais pra garantir que nada fique escondido */
+    min-height: 100vh;
     background: linear-gradient(to right, #000000, #002152);
     font-family: 'Poppins', 'Inter', 'Roboto', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .form {
@@ -33,8 +30,9 @@ body {
     background-image: url("../media/mountains.png");
     object-fit: fill;
     width: 100vh;
-    justify-content: end;
+    justify-content: center;
     border-radius: 15px;
+    align-items: center;
     box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.5);
     transition: 0.3s ease;
 }
@@ -102,7 +100,7 @@ body {
 .users-container {
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 12vh;
 }
 
 .users-table {
@@ -333,4 +331,44 @@ body {
     .search-input {
         width: 80%;
     }
+}
+
+/* ===== PAGINATION ===== */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.step-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #0f0f1a;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.step-links a {
+    background: linear-gradient(90deg, #002152, #00173a);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 1.9vh;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.step-links a:hover {
+    transform: scale(1.08);
+    background: linear-gradient(90deg, #00173a, #002152);
+}
+
+.current {
+    color: #56ccf2;
+    font-weight: bold;
+    font-size: 1.9vh;
 }

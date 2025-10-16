@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 <div class="users-container">
-    {% if users %}
+    {% if page_object %}
         <table class="users-table">
             <thead>
                 <tr >
@@ -14,7 +14,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for user in users %}
+                {% for user in page_object %}
                 <tr>
                     <td><a href="{% url "contact:user" user.id %}" class="user-link">{{ user.id }}</a></td>
                     <td>{{ user.first_name }}</td>
@@ -25,10 +25,11 @@
                 {% endfor %}
             </tbody>
         </table>
-    {% else %}
+        {% else %}
         <div>
             <h1 style="color: white; font-size: 4vh;">Users Not Found</h1>
         </div>
-    {% endif %}
-</div>
+        {% endif %}
+    </div>
+{% include "global/partials/_paginator.html" %}
 {% endblock content %}
