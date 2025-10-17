@@ -1,0 +1,39 @@
+{% extends "global/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="form-container">
+    <div class="form">
+        <h2 class="create_title">Criar Contato</h2>
+
+        <form method="post" class="space">
+            {% csrf_token %}
+            
+            <div class="block_orientation">
+                <label class="labels" for="first_name">Nome:</label>
+                <input type="text" id="first_name" name="first_name" class="inputs_form" placeholder="Digite o nome">
+            </div>
+
+            <div class="block_orientation">
+                <label class="labels" for="last_name">Sobrenome:</label>
+                <input type="text" id="last_name" name="last_name" class="inputs_form" placeholder="Digite o sobrenome">
+            </div>
+
+            <div class="block_orientation">
+                <label class="labels" for="email">E-mail:</label>
+                <input type="email" id="email" name="email" class="inputs_form" placeholder="exemplo@email.com">
+            </div>
+
+            <div class="block_orientation">
+                <label class="labels" for="phone">Telefone:</label>
+                <input type="text" id="phone" name="phone" class="inputs_form" placeholder="(00) 00000-0000">
+            </div>
+
+            <div class="buttons-form">
+                <button type="submit" class="form-button">Salvar</button>
+                <button type="reset" class="form-button">Limpar</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
