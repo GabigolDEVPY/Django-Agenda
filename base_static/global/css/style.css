@@ -245,7 +245,7 @@ body::before {
     gap: 8px;
     display: flex;
     flex-direction: column;
-    width: auto;
+    width: 35vh;
 }
 
 .labels {
@@ -255,9 +255,9 @@ body::before {
     letter-spacing: 0.3px;
 }
 
-.inputs_form {
+.block_orientation input {
     height: 5vh;
-    width: 100%;
+    width: 35vh;
     max-width: 35vh;
     background: rgba(30, 33, 56, 1);
     color: #e4e7eb;
@@ -269,11 +269,15 @@ body::before {
     outline: none;
 }
 
-.inputs_form::placeholder {
+.errorlist {
+    font-size: 13px;
+}
+
+.block_orientation input::placeholder {
     color: #6b7280;
 }
 
-.inputs_form:focus {
+.block_orientation input:focus {
     background: rgba(30, 33, 56, 0.9);
     border-color: #6366f1;
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
