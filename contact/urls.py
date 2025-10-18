@@ -13,6 +13,6 @@ urlpatterns = [
     
     path('contact/<int:id>/', views.user_detail, name='user'),
     path('contact/create/', views.create, name='create'),
-    path('contact/update/<int:id>/', views.update, name='update')
-    
+    path('contact/update/<int:id>/', views.update, name='update'),
+    path('contact/delete/<int:id>/', views.delete, name='delete'),
 ]

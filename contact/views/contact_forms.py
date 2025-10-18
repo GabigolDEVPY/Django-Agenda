@@ -32,3 +32,13 @@ def update(request, id):
     form = ContactForm(instance=contact)
     context = {'form': form, 'contact': contact, "title": "Atualizar Contato"}
     return render(request, 'contact/create.html', context)   
+
+def delete(request, id):
+    contact = get_object_or_404(Contact, id=id)
+
+    if request.method == "POST":
+        contact.delete()
+        return redirect("contact:users")  # depois de deletar, volta pra listagem
+
+    context = {"contact": contact}
+    return render(request, "contact/delete_confirm.html", context)

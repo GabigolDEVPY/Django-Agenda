@@ -9,8 +9,19 @@
             <p><span>📝 Descrição:</span></p>
             <p class="user-description">{{ contact.description }}</p>
         </div>
-        <a href="{% url 'contact:users' %}" class="back-button">Voltar</a>
-        <a href="{% url 'contact:update' contact.id %}" class="back-button">Atualizar</a>
+
+        <div class="buttons-form" style="display:flex; gap:10px;">
+            <a href="{% url 'contact:users' %}" class="back-button">Voltar</a>
+            <a href="{% url 'contact:update' contact.id %}" class="back-button">Atualizar</a>
+
+            <!-- Form de exclusão -->
+            <form method="post" action="{% url 'contact:delete' contact.id %}" style="display:inline;">
+                {% csrf_token %}
+                <button style="border: None; height: 5.4vh;" type="submit" class="back-button" style="background-color:#d9534f;">
+                    Excluir
+                </button>
+            </form>
+        </div>
     </div>
 </div>
 {% endblock content %}

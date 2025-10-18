@@ -17,6 +17,5 @@ class ContactForm(forms.ModelForm):
             self.add_error("first_name", msg)
             self.add_error("last_name", msg)
 
-        print(cleaned_data)
         return super().clean()
             
